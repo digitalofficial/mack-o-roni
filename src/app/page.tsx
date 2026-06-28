@@ -212,54 +212,72 @@ export default function MacORoni() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-[#1C1917]/40" />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-6 max-w-6xl mx-auto">
+          {/* Text */}
+          <div className="text-center lg:text-left lg:flex-1">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 bg-[#FCD34D]/30 backdrop-blur-sm border border-[#FCD34D]/40 rounded-full px-5 py-2 mb-6"
+            >
+              <Truck className="w-4 h-4 text-[#FCD34D]" />
+              <span className="text-white text-sm font-bold">Tucson&apos;s Cheesiest Food Truck</span>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="font-[family-name:var(--font-fredoka)] text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
+              style={{ textShadow: "3px 5px 15px rgba(0,0,0,0.5)" }}
+            >
+              Cheesy. Loaded.{" "}
+              <span className="text-[#FCD34D]">Legendary.</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg md:text-xl text-white/90 max-w-2xl mb-8"
+              style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}
+            >
+              Gourmet mac &amp; cheese loaded with outrageous toppings, rolling
+              through the streets of Tucson. Life&apos;s too short for boring mac.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="#menu"
+                className="bg-[#F97316] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+              >
+                See the Menu
+              </a>
+              <a
+                href="#schedule"
+                className="bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-bold px-8 py-4 rounded-full text-lg border border-white/30 transition-colors"
+              >
+                Find the Truck
+              </a>
+            </motion.div>
+          </div>
+          {/* Mascot */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+            initial={{ opacity: 0, scale: 0.6, rotate: 10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 bg-[#FCD34D]/30 backdrop-blur-sm border border-[#FCD34D]/40 rounded-full px-5 py-2 mb-6"
+            transition={{ duration: 0.8, delay: 0.4, type: "spring", bounce: 0.4 }}
+            className="lg:flex-shrink-0"
           >
-            <Truck className="w-4 h-4 text-[#FCD34D]" />
-            <span className="text-white text-sm font-bold">Tucson&apos;s Cheesiest Food Truck</span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-[family-name:var(--font-fredoka)] text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
-            style={{ textShadow: "3px 5px 15px rgba(0,0,0,0.5)" }}
-          >
-            Cheesy. Loaded.{" "}
-            <span className="text-[#FCD34D]">Legendary.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8"
-            style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}
-          >
-            Gourmet mac &amp; cheese loaded with outrageous toppings, rolling
-            through the streets of Tucson. Life&apos;s too short for boring mac.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <a
-              href="#menu"
-              className="bg-[#F97316] hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
-            >
-              See the Menu
-            </a>
-            <a
-              href="#schedule"
-              className="bg-white/15 backdrop-blur-sm hover:bg-white/25 text-white font-bold px-8 py-4 rounded-full text-lg border border-white/30 transition-colors"
-            >
-              Find the Truck
-            </a>
+            <motion.img
+              src="/mascot.png"
+              alt="Mack o' Roni mascot — leprechaun noodle character with piles of mac and cheese"
+              className="w-[280px] md:w-[340px] lg:w-[400px] drop-shadow-[0_10px_40px_rgba(252,211,77,0.4)]"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
           </motion.div>
         </div>
         <motion.div
